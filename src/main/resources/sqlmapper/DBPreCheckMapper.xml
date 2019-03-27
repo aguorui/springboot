@@ -15,11 +15,11 @@
     UNION ALL
         SELECT
             COUNT(*)= 4 as fg,'class_info' as tb_name,group_concat(COLUMN_NAME) db_columns,
-            'ID,SCORE,CLASS,USER_NAME' exp_columns
+            'ID,SCORE,CLASS_FOR,USER_NAME' exp_columns
         FROM INFORMATION_SCHEMA.COLUMNS
         WHERE
             TABLE_NAME = 'class_info'
-            AND COLUMN_NAME in('ID','SCORE','CLASS','USER_NAME')
+            AND COLUMN_NAME in('ID','SCORE','CLASS_FOR','USER_NAME')
         GROUP BY TABLE_NAME
         )a
         WHERE fg=0
