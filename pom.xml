@@ -97,15 +97,41 @@
 			<artifactId>mpxj</artifactId>
 			<version>7.1.0</version>
 		</dependency>
-	</dependencies>
 
-	<build>
+
+
+
+	</dependencies>
+<build>
+    <plugins>
+        <!--<plugin>
+            &lt;!&ndash; https://mvnrepository.com/artifact/cn.dalgen.plugins/mybatis-maven-plugin &ndash;&gt;
+                <groupId>cn.dalgen.plugins</groupId>
+                <artifactId>mybatis-maven-plugin</artifactId>
+                <version>1.2.0</version>
+        </plugin>-->
+
+		<plugin>
+			<groupId>cn.dalgen.plugins</groupId>
+			<artifactId>mybatis-maven-plugin</artifactId>
+			<version>1.2.0</version>
+			<configuration>
+				<templateDirectory>dalgen/templates</templateDirectory>
+				<copyTemplate>true</copyTemplate>
+				<outputDirectory>src</outputDirectory>
+			</configuration>
+		</plugin>
+    </plugins>
+
+</build>
+
+	<!--<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!-- mybatis generator 自动生成代码插件 -->
+			&lt;!&ndash; mybatis generator 自动生成代码插件 &ndash;&gt;
 			<plugin>
 				<groupId>org.mybatis.generator</groupId>
 				<artifactId>mybatis-generator-maven-plugin</artifactId>
@@ -117,7 +143,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>
+	</build>-->
 
 
 </project>
