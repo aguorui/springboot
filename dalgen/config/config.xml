@@ -27,20 +27,30 @@
         <property name="url" value="jdbc:mysql://127.0.0.1:3306/test"/>
         <property name="userid" value="root"/>
         <property name="password" value="123456"/>
-        <property name="schema" value="test2"/>
+        <property name="schema" value="test"/>
     </database>
 
     <!-- ========project.name pom.xml中的值========================= -->
     <!--<package value="com.bgdf.${project.name}.common.dal.${database.name}.auto"/>-->
     <!--database="fbi" 此参数可选，多数据源时如果不使用此参数则为通用-->
-    <package value="${database.name}">
+  <!--  <package value="${database.name}" >
         <subClass name="dal" value="com.winter.dal"/>
         <subClass name="mapper" value="com.winter.mapper"/>
-        <subClass name="mapper.xml" value="sqlmapper.${database.name}"/><!-- 绝对路径 -->
+        <subClass name="mapper.xml" value="sqlmapper.${database.name}"/>&lt;!&ndash; 绝对路径 &ndash;&gt;
         <subClass name="paging" value="com.winter.paging"/>
         <subClass name="dao" value="com.winter.service.impl"/>
         <subClass name="dataobject" value="com.winter.model"/>
         <subClass name="resultmap" value="com.winter.resultmap"/>
+    </package>-->
+
+    <package value="com${database.name}" >
+        <subClass name="dal" value="winter.dal"/>
+        <subClass name="mapper" value="winter.mapper"/>
+        <subClass name="mapper.xml" value="/sqlmapper.${database.name}"/><!-- 绝对路径 -->
+        <subClass name="paging" value="winter.paging"/>
+        <subClass name="dao" value="winter.service.impl"/>
+        <subClass name="dataobject" value="winter.model"/>
+        <subClass name="resultmap" value="winter.resultmap"/>
     </package>
 
   <!-- <package value="cn.dalgen.dal.${database.name}" database="dbName2">

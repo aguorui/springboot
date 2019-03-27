@@ -1,0 +1,78 @@
+<!DOCTYPE table SYSTEM "../config/table-config-1.0.dtd">
+<table sqlname="happiness" physicalName="happiness" remark="HAPPINESS">
+    <!--  特殊字符说明 &lt;&gt; <> -->
+    <!-- baseSql option中 select * 会自动替换为 include -->
+    <sql id="Base_Column_List">
+        ID,CITY,NUM
+    </sql>
+
+    <!-- baseSql option中 select sf.* 会自动替换为 include -->
+    <sql id="Base_SF_Column_List">
+        sf.ID,sf.CITY,sf.NUM
+    </sql>
+
+    <operation name="insert" paramtype="object" remark="插入表:happiness">
+        <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER">
+            SELECT
+            LAST_INSERT_ID()
+        </selectKey>
+        <![CDATA[
+        INSERT INTO happiness(
+            ID
+            ,CITY
+            ,NUM
+        )VALUES(
+             null
+            , #{city,jdbcType=VARCHAR}
+            , #{num,jdbcType=INTEGER}
+        )
+        ]]>
+    </operation>
+
+    <!-- foreach 可以自定义类型，paramtype="primitive" foreach->javatype="自己书写的类"  -->
+    <!-- 只有一个参数且为List时必须将参数命名为list -->
+    <operation name="insertBatch" paramtype="objectList" remark="批量插入表:happiness">
+        INSERT INTO happiness(
+            ID
+            ,CITY
+            ,NUM
+        )VALUES
+        <foreach collection="list"  item="item" separator=",">
+            (
+                 null
+                , #{item.city,jdbcType=VARCHAR}
+                , #{item.num,jdbcType=INTEGER}
+            )
+        </foreach>
+    </operation>
+
+    <!-- 不推荐使用全 update 有需要自己打开
+    <operation name="update" paramtype="object" remark="更新表:happiness">
+        <![CDATA[
+        UPDATE happiness
+        SET
+            CITY            = #{city,jdbcType=VARCHAR}
+            ,NUM             = #{num,jdbcType=INTEGER}
+        WHERE
+            ID              = #{id,jdbcType=INTEGER}
+        ]]>
+    </operation>
+    -->
+    <operation name="deleteById"  remark="根据主键删除数据:happiness">
+        <![CDATA[
+        DELETE FROM happiness
+        WHERE
+            ID = #{id,jdbcType=INTEGER}
+        ]]>
+    </operation>
+
+    <operation name="getById" multiplicity="one" remark="根据主键获取数据:happiness">
+        SELECT *
+        FROM happiness
+        WHERE
+        <![CDATA[
+            ID = #{id,jdbcType=INTEGER}
+        ]]>
+    </operation>
+
+</table>

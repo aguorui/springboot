@@ -1,4 +1,4 @@
-package .com.winter.mapper;
+package com.winter.mapper;
 import java.util.List;
 /**
  * 数据库字段检查

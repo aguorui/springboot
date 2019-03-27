@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace=".com.winter.mapper.DBPreCheckMapper">
+<mapper namespace="com.winter.mapper.DBPreCheckMapper">
     <select id="dbColumnCheck" resultType="String">
         SELECT CONCAT('表结构不一致 tbName:',tb_name,' 期望字段:',exp_columns,' 数据库中字段:',db_columns) as msg
         FROM (
+        SELECT
+            COUNT(*)= 3 as fg,'happiness' as tb_name,group_concat(COLUMN_NAME) db_columns,
+            'ID,CITY,NUM' exp_columns
+        FROM INFORMATION_SCHEMA.COLUMNS
+        WHERE
+            TABLE_NAME = 'happiness'
+            AND COLUMN_NAME in('ID','CITY','NUM')
+        GROUP BY TABLE_NAME
+    UNION ALL
         SELECT
             COUNT(*)= 4 as fg,'class_info' as tb_name,group_concat(COLUMN_NAME) db_columns,
             'ID,SCORE,CLASS,USER_NAME' exp_columns
