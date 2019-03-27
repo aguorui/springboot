@@ -12,10 +12,20 @@ import java.io.File;
  * Created By Donghua.Chen on  2018/1/9
  */
 @Controller
+@RequestMapping("/project")
 public class ProjectController {
 
     @Autowired
     private ProjectService projectService;
+
+
+    @ResponseBody
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    public ResponseEntity get(){
+        int i = projectService.get();
+        return ResponseEntity.ok("查询成功::"+i);
+    }
+
 
     @ResponseBody
     @RequestMapping(value = "/add/project-file", method = RequestMethod.POST)

@@ -85,4 +85,7 @@
         WHERE
         p.batchNum = #{batchNum,jdbcType=VARCHAR}
     </select>
+    <select id="selectProject" resultType="com.winter.model.Project">
+        select  * from  PROJECT
+    </select>
 </mapper>

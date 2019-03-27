@@ -26,4 +26,8 @@ public interface ProjectMapper {
      * @return
      */
     List<Project> getProjectsByBatchNum(@Param("batchNum") String batchNum);
+
+    List<Project> selectProject();
+
+
 }

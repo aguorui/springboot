@@ -36,6 +36,13 @@ public class ProjectServiceImpl implements ProjectService {
         return projectMapper.addProjectSelective(project);
     }
 
+    @Override
+    public int get(){
+        List<Project> projects = projectMapper.selectProject();
+        return  projects.size();
+    }
+
+
     @Transactional
     @Override
     public void readMmpFileToDB(File file) {
