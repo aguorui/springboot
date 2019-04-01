@@ -6,9 +6,9 @@ package com.winter;
 
 @SpringBootApplication
 @MapperScan("com.winter.mapper")
-public class SpringbootMybatisDemoApplication {
+public class BootStrap {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringbootMybatisDemoApplication.class, args);
+		SpringApplication.run(BootStrap.class, args);
 	}
 }
