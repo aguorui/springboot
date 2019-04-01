@@ -1,17 +1,19 @@
 package com.winter.service.impl;
 
+import com.winter.service.test.ClassInfoDOService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.winter.model.ClassInfoDO;
 import java.util.List;
 import com.winter.mapper.ClassInfoDOMapper;
+import org.springframework.stereotype.Service;
 
 /**
 * The Table class_info.
 * CLASS_INFO
 */
-@Repository
-public class ClassInfoDAO{
+@Service
+public class ClassInfoServiceImpl implements ClassInfoDOService {
 
     @Autowired
     private ClassInfoDOMapper classInfoDOMapper;

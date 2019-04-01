@@ -1,7 +1,7 @@
 package com.winter;
 
 import com.winter.model.ClassInfoDO;
-import com.winter.service.impl.ClassInfoDAO;
+import com.winter.service.impl.ClassInfoServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SpringbootMybatisDemoApplicationTests {
 
 	@Autowired
-	private ClassInfoDAO classInfoDAO;
+	private ClassInfoServiceImpl classInfoDAO;
 	@Test
 	public void contextLoads() {
         ClassInfoDO byId = classInfoDAO.getById(Long.parseLong("1"));

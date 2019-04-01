@@ -46,7 +46,7 @@
     <package value="com${database.name}" >
         <subClass name="dal" value="winter.dal"/>
         <subClass name="mapper" value="winter.mapper"/>
-        <subClass name="mapper.xml" value="/sqlmapper.${database.name}"/><!-- 绝对路径 -->
+        <subClass name="mapper.xml" value="/mapping.${database.name}"/><!-- 绝对路径 -->
         <subClass name="paging" value="winter.paging"/>
         <subClass name="dao" value="winter.service.impl"/>
         <subClass name="dataobject" value="winter.model"/>
