@@ -1,7 +1,10 @@
 package com.winter;
 
+import com.winter.model.ClassInfoDO;
+import com.winter.service.impl.ClassInfoDAO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -9,8 +12,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class SpringbootMybatisDemoApplicationTests {
 
+	@Autowired
+	private ClassInfoDAO classInfoDAO;
 	@Test
 	public void contextLoads() {
+        ClassInfoDO byId = classInfoDAO.getById(Long.parseLong("1"));
+        System.out.println(byId.getUserName());
 	}
 
 }

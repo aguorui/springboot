@@ -1,5 +1,6 @@
 #引入依赖
 <build>
+    <plugins>
 	<plugin>
 			<groupId>cn.dalgen.plugins</groupId>
 			<artifactId>mybatis-maven-plugin</artifactId>

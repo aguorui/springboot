@@ -5,12 +5,13 @@ import org.springframework.stereotype.Repository;
 import com.winter.model.ClassInfoDO;
 import java.util.List;
 import com.winter.mapper.ClassInfoDOMapper;
+import org.springframework.stereotype.Service;
 
 /**
 * The Table class_info.
 * CLASS_INFO
 */
-@Repository
+@Service
 public class ClassInfoDAO{
 
     @Autowired

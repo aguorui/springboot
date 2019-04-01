@@ -1,5 +1,6 @@
 package com.winter.Controller;
 
+import com.sun.xml.internal.bind.v2.model.impl.ClassInfoImpl;
 import com.winter.model.User;
 import com.winter.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,8 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
+    @Autowired
+    private ClassInfoImpl classInfo;
     @ResponseBody
     @RequestMapping(value = "/add", produces = {"application/json;charset=UTF-8"})
     public int addUser(User user){
