@@ -1,17 +1,13 @@
-package com.winter.Controller;
+package com.winter.controller;
 
 import com.winter.model.ClassInfoDO;
-import com.winter.service.project.ProjectService;
 import com.winter.service.test.ClassInfoDOService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.io.File;
 
 /**
  * Created By Donghua.Chen on  2018/1/9

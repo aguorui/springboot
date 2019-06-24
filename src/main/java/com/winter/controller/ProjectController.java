@@ -1,4 +1,4 @@
-package com.winter.Controller;
+package com.winter.controller;
 
 import com.winter.service.project.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
