@@ -1,5 +1,6 @@
 server:
   port: 1111
+  context-path: /boot
 
 spring:
     datasource:

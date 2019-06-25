@@ -2,7 +2,7 @@
 
 ### 项目架构
 * JDK 1.8
-* Springboot 1.5.6.RELEASE
+* Springboot 2.1.6 RELEASE
 * Mybatis SpringBoot starter 1.3.0
 * thymeleaf 前端模板引擎
 * alibaba druid 连接池
@@ -21,5 +21,5 @@
 * 2018-01-09 更新net.sf.mpxj读取Project文件,示例文件在file包内，sql在sql包内。
 * 2018-01-15 更新net.sf.mpxj从数据库中导出Project的XML文件。
 
-### swagger访问地址
-http://127.0.0.1:1111/swagger-ui.html#
+### swagger访问地址(2019-06-25)
+http://127.0.0.1:1111/boot/swagger-ui.html#/
